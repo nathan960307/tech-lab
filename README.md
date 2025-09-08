@@ -3,13 +3,11 @@
 
 ## 📂 실험 기록
 
-| 완료 여부 | 주제             | 폴더 링크                          | 기간                |
-|-----------|------------------|------------------------------------|---------------------|
-| [ ]       | CI/CD Test       | [ci-cd-test](./ci-cd-test)         | 2025-09-00 ~ 2025-09-00 |
-| [ ]       | Redis Test       | [redis-test](./redis-test)         | 2025-00-00 ~ 2025-00-00 |
-| [ ]       | ElasticSearch    | [elasticsearch-test](./elasticsearch-test) | 2025-00-00 ~ 2025-00-00 |
-| [ ]       | Kafka Test       | [kafka-test](./kafka-test)         | 2025-00-00 ~ 2025-00-00 |
-| [ ]       | Spring Batch     | [spring-batch-test](./spring-batch-test) | 2025-00-00 ~ 2025-00-00 |
+- [ ] CI/CD Test (2025-09-08 ~ 2025-09-09)
+- [ ] Redis Test (2025-09-10 ~ 2025-09-11)
+- [ ] ElasticSearch (2025-09-15 ~ 2025-09-16)
+- [ ] Kafka Test (2025-09-20 ~ 2025-09-21)
+- [ ] Spring Batch (2025-09-25 ~ 2025-09-27)
 
 
 ## 🚀 목적
