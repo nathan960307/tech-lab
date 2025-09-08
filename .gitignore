@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+out/
+bin/
+
+# Ignore Gradle Wrapper JAR files except the one needed
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE settings
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Java class files
+*.class
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
