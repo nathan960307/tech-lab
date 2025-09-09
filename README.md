@@ -12,6 +12,7 @@
       - GitHub Actions로 Gradle 빌드 + 테스트 + Docker 이미지 빌드 & 푸시 자동화 실습
   
       ### 🛠 진행 순서
+      CI
       1. `gradle init`으로 Java 프로젝트 생성 (JDK 21, Groovy DSL, JUnit Jupiter)
       2. 프로젝트를 `ci-cd-test/` 폴더로 이동
       3. `.gitignore` 정리 (build/, .gradle/, .idea/ 등 제외)
@@ -20,11 +21,18 @@
       6. `Dockerfile` + `.dockerignore` 작성
       7. GitHub Secrets (`DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN`) 추가
       8. Docker Hub 리포지토리(`nathan9603/tech-lab`) 생성 및 푸시 설정
+      CD
+      1.
+      2.
       
       ### ⚠ 트러블슈팅
       - **gradlew 실행 권한 문제**
         - 증상: Docker 빌드 중 `/bin/sh: 1: ./gradlew: Permission denied`
         - 해결: `RUN chmod +x gradlew` 추가하여 해결
+      
+       - **bootJar 태스크 없음**
+        - 증상: `Task 'bootJar' not found`
+        - 해결: 순수 Java 프로젝트라 `build` 사용 + `COPY --from=builder /app/build/libs/*.jar app.jar` 로 변경
       
       ### ✅ 현재 상태
       - CI 파이프라인: 빌드 & 테스트 성공 시 Docker 이미지 자동 생성 및 Docker Hub 푸시
