@@ -13,6 +13,6 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 #COPY --from=builder /app/app/build/libs/app.jar app.jar
 # ✅ 빌드 산출물 복사 (이름 가변 → *.jar)
-COPY --from=builder /app/build/libs/*.jar app.jar
+COPY --from=builder /app/app/build/libs/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app/app.jar"]
