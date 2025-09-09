@@ -9,7 +9,7 @@
       <summary>상세 보기</summary>
     
       ### 🎯 목표
-      - GitHub Actions로 Gradle 빌드 + 테스트 자동화 실습
+      - GitHub Actions로 Gradle 빌드 + 테스트 + Docker 이미지 빌드 & 푸시 자동화 실습
   
       ### 🛠 진행 순서
       1. `gradle init`으로 Java 프로젝트 생성 (JDK 21, Groovy DSL, JUnit Jupiter)
@@ -17,15 +17,18 @@
       3. `.gitignore` 정리 (build/, .gradle/, .idea/ 등 제외)
       4. GitHub에 push & Issue #1 연결
       5. `.github/workflows/ci.yml` 생성 → build/test 실행
+      6. `Dockerfile` + `.dockerignore` 작성
+      7. GitHub Secrets (`DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN`) 추가
+      8. Docker Hub 리포지토리(`nathan9603/tech-lab`) 생성 및 푸시 설정
       
       ### ⚠ 트러블슈팅
-      - **Gradle 설치/설정 문제**
-      - 증상: 초기 환경에 Gradle 설치 여부 확인 필요
-      - 해결: `gradle -v` → 8.14.2 버전 확인 완료, 설치 불필요
+      - **gradlew 실행 권한 문제**
+        - 증상: Docker 빌드 중 `/bin/sh: 1: ./gradlew: Permission denied`
+        - 해결: `RUN chmod +x gradlew` 추가하여 해결
       
       ### ✅ 현재 상태
-      - GitHub Actions CI 파이프라인 적용 완료
-      - push/pull_request 이벤트 시 자동 빌드 & 테스트 실행
+      - CI 파이프라인: 빌드 & 테스트 성공 시 Docker 이미지 자동 생성 및 Docker Hub 푸시
+      - Docker Hub: `latest`, `YYYYMMDD-<commitSHA>` 태그로 이미지 업로드 확인 완료
       
   </details>
 - [ ] Redis Test (2025-09-00 ~ 2025-09-00)
