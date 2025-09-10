@@ -49,16 +49,18 @@ jobs:
 
       - name: Build image
         run: |
+          VERSION=0.0.1
           DATE_TAG=$(date +'%Y%m%d')
           SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
           docker build ./ci-cd-test \
             -f ./ci-cd-test/Dockerfile \
-            -t $IMAGE_NAME:latest \
-            -t $IMAGE_NAME:${DATE_TAG}-${SHORT_SHA}
+            -t $IMAGE_NAME:${DATE_TAG}-${SHORT_SHA}\
+            -t $IMAGE_NAME:$VERSION
 
       - name: Push image
         run: |
+          VERSION=0.0.1
           DATE_TAG=$(date +'%Y%m%d')
           SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
-          docker push $IMAGE_NAME:latest
           docker push $IMAGE_NAME:${DATE_TAG}-${SHORT_SHA}
+          docker push $IMAGE_NAME:$VERSION
